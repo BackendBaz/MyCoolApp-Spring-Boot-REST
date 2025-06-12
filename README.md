@@ -2,6 +2,6 @@
 
 - **`Spring Boot 3.5.0`**
 - **Language: `Java 21+`**
-- **Project: `Maven`**
+- **Project Management Tool: `Maven`**
 - **Dependencies:**
   - **`Spring Web`**
