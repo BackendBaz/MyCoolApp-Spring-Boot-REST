@@ -1,10 +1,17 @@
 package ir.emadi.amir.springboot.mycoolapp.rest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class FunRestController {
+
+    @Value("${author.name}")
+    private String authorName;
+
+    @Value("${author.age}")
+    private int authorAge;
 
     // GET -> http://localhost:8080/
     @GetMapping("/")
@@ -22,5 +29,12 @@ public class FunRestController {
     @GetMapping("/fortune")
     public String getDailyFortune() {
         return "Today is your lucky day!";
+    }
+
+    // GET -> http://localhost:8080/author
+    @GetMapping("/author")
+    public String getAuthorInfo() {
+        return String.format("Author: %s => %d years old.", authorName,
+                authorAge);
     }
 }
